@@ -1,4 +1,4 @@
-@import "_variabili.scss";
+@import "_variabili";
 
 
 *{
@@ -11,12 +11,239 @@ html,body{
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: $font;
+  font-family: $font!important;
+  letter-spacing: 0.065em;
+  line-height: 1.6;
+  font-size: 16px;
+  background-color: $bgc-body;
+  scroll-behavior: smooth;
+  transition: scroll-behavior 0.5s ease-in;
 }
+
+p{
+  font-size: 0.9rem;
+  color: #333;
+}
+
+img{
+  max-width: 100%;
+}
+
+ul{
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+
 
 header{
+  height: 100vh;
+  .navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    border: 0;
+    border-radius: 0;
+    background: 0;
+    .navbar-collapse{
+      background-color: rgb(0, 0, 0);
+      text-align: center;
+      margin: 0px;
+      padding: 0px;
+      width: 100%;
+
+      .navbar-nav{
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+    .bg-dark{
+      background:0!important;
+    }
+
+    .carousel{
+      margin-bottom: 0!important;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      .carousel-inner{
+        img{
+          height: 100vh;
+        }
+      }
+    }
+
+    .hero{
+      background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../images/servizi-hero.jpg');
+      background-position: center center;
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+      position: absolute;
+      top: 0;
+
+      h1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        height: 100%;
+      }
+    }
+
+    .hero-prezzi{
+      background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../images/hero-prezzi.jpg');
+      background-position: center center;
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+      position: absolute;
+      top: 0;
+
+      h1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        height: 100%;
+      }
+    }
 
 }
 
+.mt-100{
+  margin-top: 100px;
+}
 
-@import "_media-query.scss";
+.mb-100{
+  margin-bottom: 100px;
+}
+
+main{
+.servizi{
+  background-color: #e6e6e6;
+  padding: 2em;
+  .our-service{
+    h2{
+      color: $title-red;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 3rem;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    }
+    p{
+      margin: 0 0 1em;
+      padding: 0 1em;
+      text-align: center;
+    }
+  }
+  .service-box{
+    background-color: #fff;
+    width: 100%;
+    padding: 1em 0 0;
+    margin: 0 0 2em;
+    border-radius: 14px;
+
+    .container-img{
+    width: 100%;
+    overflow: hidden;
+    img{
+      width: 100%;
+      padding: 0 1em;
+      transition: transform .25s, visibility .25s ease-in;
+      transform-origin: 0 0;
+    }
+    &:hover img{
+      cursor: pointer;
+      transform:scale(1.1);
+    }
+  }
+    h3{
+      font-size: 1.19rem;
+      color: #000000;
+      padding: 20px 0 0;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: center;
+    }
+    p{
+      padding: 0 15px;
+      text-align: center;
+    }
+  }
+
+  h3{
+  font-size: 1.5rem;
+  font-weight: bold;
+  a{
+    color: #333;
+  }
+
+  i{
+    color:$title-red;
+    animation: arrow 1s infinite alternate linear;
+  }
+ }
+
+}
+
+.servizi-page{
+  padding: 0 1em;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+
+  .servizio-desciption{
+    display: flex;
+    flex-direction: column;
+    strong{
+      color:lighten(#000, 50%);
+    }
+
+    }
+}
+
+.about{
+  background-color: $color-white;
+
+  h2{
+    text-align: center;
+    color: $title-red;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+
+
+}
+
+@import 'prezzi';
+
+@import 'gallery';
+
+@import 'contatti';
+
+}
+
+@keyframes arrow{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(15px);
+  }
+}
+
+@import "footer";
+
+@import "media-query";
